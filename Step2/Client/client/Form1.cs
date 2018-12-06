@@ -147,7 +147,7 @@ namespace WindowsFormsApplication5
                             {
                                 // necessary GUI changes
                                 connectButton.Visible = true;
-                                connectButton.BackColor = default(Color);
+                                connectButton.BackColor = Color.AliceBlue;
                                 turn = true;
                                 feed.Text += "Your turn. \n";
                                 label1.Text = "Question";
@@ -178,6 +178,7 @@ namespace WindowsFormsApplication5
                                 portBox.Visible = false;
                                 player_q.Visible = false;
                                 IP_a.Visible = false;
+                                connectButton.BackColor = Color.Red;
 
 
                             }
@@ -194,7 +195,7 @@ namespace WindowsFormsApplication5
                         {
                             // necessary GUI changes for answering a question
                             connectButton.Visible = true;
-                            connectButton.BackColor = default(Color);
+                            connectButton.BackColor =Color.AliceBlue;
                             turn = false;
                             label3.Text = "Answer";
                             label2.Visible = false;
@@ -208,7 +209,6 @@ namespace WindowsFormsApplication5
 
                         }
                         connectButton.Visible = true;
-                        connectButton.BackColor=Color.Red;
 
 
                     }

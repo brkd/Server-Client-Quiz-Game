@@ -1,0 +1,9 @@
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\bin\Debug\WindowsFormsApplication5.exe.config
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\bin\Debug\WindowsFormsApplication5.exe
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\bin\Debug\WindowsFormsApplication5.pdb
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\client.csprojResolveAssemblyReference.cache
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\WindowsFormsApplication5.Form1.resources
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\WindowsFormsApplication5.Properties.Resources.resources
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\client.csproj.GenerateResource.Cache
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\WindowsFormsApplication5.exe
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Client\client\obj\Debug\WindowsFormsApplication5.pdb
