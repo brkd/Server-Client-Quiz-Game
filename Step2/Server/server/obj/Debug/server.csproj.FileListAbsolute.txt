@@ -1,0 +1,9 @@
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\bin\Debug\server.exe.config
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.Form1.resources
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.Properties.Resources.resources
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.csproj.GenerateResource.Cache
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\bin\Debug\server.exe
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\bin\Debug\server.pdb
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.exe
+C:\Users\SELEN HP\Desktop\SU'20\5 of 8\CS 408\step2\Step2\Step2\Server\server\obj\Debug\server.pdb
