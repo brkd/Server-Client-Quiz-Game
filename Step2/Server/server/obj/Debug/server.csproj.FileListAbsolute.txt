@@ -1,0 +1,9 @@
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\bin\Debug\server.exe.config
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\bin\Debug\server.exe
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\bin\Debug\server.pdb
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.Form1.resources
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.Properties.Resources.resources
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.csproj.GenerateResource.Cache
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.exe
+C:\Users\Erdinc\Documents\GitHub\Step2\Step2\Server\server\obj\Debug\server.pdb
