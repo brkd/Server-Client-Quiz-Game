@@ -22,6 +22,13 @@ namespace WindowsFormsApplication5
         static string IP;
         static string name;
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            feed.Text += "Application Closing..." + '\n';
+            client.Close();
+            Application.Exit();
+
+        }
 
         public Form1()
         {
