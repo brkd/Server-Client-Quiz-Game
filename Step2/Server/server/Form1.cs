@@ -16,14 +16,21 @@ namespace server
     public partial class Form1 : Form
     {
         static Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        static List<Socket> clientSockets = new List<Socket>();
+        
         static List<string> names = new List<string>();
-        static bool terminating = false, accept = true;
+        static List<int> scores = new List<int>();
+        static bool terminating = false, accept = true, quit = false;
         static string question, answer, guess;
         static int clients = 0;
         static readonly object _game = new object(), _accept = new object();
+        public class clientSocket
+        {
+            public string Name;
+            public Socket Socket;
+            public int Score;
+        }
 
-
+        static List<clientSocket> clientSockets = new List<clientSocket>();
         public Form1()
         {
             InitializeComponent();
@@ -32,19 +39,21 @@ namespace server
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            startButton.Visible = false;
+            startButton.Enabled = false;
             int turn = int.Parse(turnNum.Text);
 
-            play();
+            play(turn);
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            foreach (clientSocket cs in clientSockets)
+                cs.Socket.Close();
             Application.Exit();
         }
 
         private void connectButton_Click(object sender, EventArgs e)
         {
-            connectButton.Visible = false;
+            connectButton.Enabled = false;
             int portnum = int.Parse(port.Text);
             try
             {
@@ -64,8 +73,22 @@ namespace server
         }
 
         //Initiates the game
-        private void play()
+
+        private void play(int turn)
         {
+            clientSockets.Sort((s1, s2) => s1.Name.CompareTo(s2.Name));
+            int counter = 0;
+            while (counter <= turn)
+            {
+                Byte[] command_buffer = Encoding.Default.GetBytes("Ask a question");
+                Byte[] qa_buffer = new Byte[500];
+                Byte[] answer_buffer = new Byte[500];
+                
+
+                
+            }
+            terminating = true;
+
             /*string command = "Ask a question.";
             Byte[] buffer = Encoding.Default.GetBytes(command);
             Byte[] a_q_buffer = new Byte[64];
@@ -198,7 +221,8 @@ namespace server
             {
                 try
                 {
-                    Socket newClient = serverSocket.Accept();
+                    clientSocket newClient = new clientSocket();
+                    newClient.Socket = serverSocket.Accept();
                     clientSockets.Add(newClient);
                     Thread receiveThread = new Thread(Receive);
                     receiveThread.Start();
@@ -219,32 +243,33 @@ namespace server
                 }
             }
         }
-
         //Receiving messages
         private void Receive(object obj)
         {
             bool connected = true;
 
-            while (connected && !terminating)
+            while (!quit && connected && !terminating)
             {
                 int lenClientSoc = clientSockets.Count();
-
-                Socket thisClient = clientSockets[lenClientSoc - 1];
+                clientSocket thisClient = new clientSocket();
+                thisClient.Socket = clientSockets[lenClientSoc - 1].Socket;
                 try
                 {
                     Byte[] buffer = new Byte[500];
-                    thisClient.Receive(buffer);
+                    thisClient.Socket.Receive(buffer);
                     string name = Encoding.Default.GetString(buffer).Replace("\0", string.Empty);
                     while (names.Any(item => item == name))
                     {
                         buffer = new Byte[500];
-                        thisClient.Send(Encoding.Default.GetBytes("Please enter a different name."));
-                        thisClient.Receive(buffer);
+                        thisClient.Socket.Send(Encoding.Default.GetBytes("Please enter a different name."));
+                        thisClient.Socket.Receive(buffer);
                         name = Encoding.Default.GetString(buffer).Replace("\0", string.Empty);
                     }
                     feed.Text += name;
                     feed.Text += " has connected. \n";
+                    clientSockets[lenClientSoc - 1].Name = name;
                     names.Add(name);
+                    clients++;
 
                 }
                 catch
@@ -252,15 +277,16 @@ namespace server
                     connected = false;
                     if (!terminating)
                     {
-                        feed.Text += names[lenClientSoc - 1];
+                        feed.Text += clientSockets[lenClientSoc - 1].Name;
                         feed.Text += " has disconnected. \n";
                     }
-                    thisClient.Close();
                     clientSockets.Remove(thisClient);
+                    names.RemoveAt(lenClientSoc - 1);
+                    thisClient.Socket.Close();
+                    clients--;
                 }
-
-
             }
+            
         }
 
     }
